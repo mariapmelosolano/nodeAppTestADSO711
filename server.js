@@ -21,6 +21,9 @@ app.use(morgan('dev')); // la opción dev da la información principal. Combined
 // Routes
 //Ruta de usuarios para la V1 del API
 app.use('/api/v1/users', require('./api/v1/user.routes'));//Ruta para users
+app.use('/api/v1/articles', require('./api/v1/articles.routes'));
+app.use('/api/v1/category', require('./api/v1/category.routes'));
+
 
 // Se configura una ruta sencilla a través del método GET para probar
 // app.get('/', (req, res) => { // req=request: llegan datos al servidor
