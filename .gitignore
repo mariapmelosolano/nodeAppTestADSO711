@@ -2,6 +2,10 @@ node_modules
 .env
 .env.test
 .env.prod
+<<<<<<< HEAD
 npm-debug.log
+=======
+nom-debug.log
+>>>>>>> 2ae00848e44ecc1237020a3f510ee9b7da109df1
 .DS_Store
 .vscode

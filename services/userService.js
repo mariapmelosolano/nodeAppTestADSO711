@@ -1,40 +1,41 @@
-const db = require('../models')
+const db = require('../models');
 
-const getAllUsers = async () =>{
+const getAllUsers = async () => {
     try {
-        const allUsers = await db.User.findAll()
+        const allUsers = await db.User.findAll();
         return allUsers;
-        
     } catch (error) {
-        throw new Error(`Error al traer los usuarios ${error.message}`)
+        throw new Error(`Error al traer los usuarios ${error.message}`);
     }
-} 
-const getOneUser = async (id) =>{
+};
+
+const getOneUser = async (id) => {
     try {
-        const user = await db.User.findByPk(id)
-        return user
+        const user = await db.User.findByPk(id);
+        return user;
     } catch (error) {
-              throw new Error(`Error al traer al susuario ${error.message}`);      
+        throw new Error(`Error al traer el usuario con id ${id}`);
     }
-}
-const saveUser = async (name, email, password) =>{
+};
+
+const createUser = async (name, email, password) => {
     try {
         let newUser = await db.User.create({
-            name, 
-            email, 
-            password
-        })
-        return newUser
+            name,
+            email,
+            password,
+        });
+        return newUser;
     } catch (error) {
-        return error.message || `Error al crear el usuario`;      
+        return error.message || "User could not be created";
     }
-}
+};
 
 const updateUser = async (id, name, email, password) => {
     try {
         let updatedUser = await db.User.update({
-            name, 
-            email, 
+            name,
+            email,
             password
         }, {
             where: {
@@ -43,9 +44,9 @@ const updateUser = async (id, name, email, password) => {
         });
         return updatedUser;
     } catch (error) {
-        return error.message || `Error al actualizar el usuario`;      
+        return error.message || "usuario no actualizado";
     }
-}
+};
 
 const deleteUser = async (id) => {
     try {
@@ -56,7 +57,8 @@ const deleteUser = async (id) => {
         });
         return deletedUser;
     } catch (error) {
-        return error.message || `Error al eliminar el usuario`;      
+        return error.message || "User could not be deleted";
     }
-}
-module.exports = {getAllUsers, getOneUser, saveUser, updateUser,deleteUser}
+};
+
+module.exports = { getAllUsers, getOneUser, createUser, updateUser, deleteUser };

@@ -1,8 +1,8 @@
 {
   "name": "apptest",
   "version": "1.0.0",
-  "main": "index.js",
   "description": "Proyecto de prueba inicial con nodejs",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js"
   },
