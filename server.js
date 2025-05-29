@@ -21,5 +21,5 @@ app.use('/api/v1/category', require('./api/v1/category.routes'));
 
 // Inicializar el servidor
 app.listen(app.get('port'), () => {
-    console.log(`Server running on localhost:${app.get('port')}`);
+    console.log(`Server running on localhost:${app.get('port')}😍`);
 });

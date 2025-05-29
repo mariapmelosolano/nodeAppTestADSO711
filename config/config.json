@@ -2,16 +2,22 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "nodejs_app_test",
+    "database": "nodejs_app_test711",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "mariamelito",
+    "password": "o00QdrSZXiLD7IJhmEj93fifoqSs4Xon",
+    "database": "nodejs_app_test711_hjlc",
+    "host": "dpg-d0sefvqli9vc73ctrpsg-a",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   },
   "production": {
     "username": "root",

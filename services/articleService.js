@@ -3,13 +3,17 @@ const db = require('../models');
 const getAllArticles = async () => {
   try {
     let Articles = await db.Article.findAll({
-      // Con esta opción permitimos mostrar los artículos con la información del usuario
+     
       include: {
         model: db.User,
         required: true,
         as: "User",
         attributes: ["id", "name", "email"],
       },
+      attributes: {
+        exclude: ['createdAt', 'updatedAt']
+      },
+      include: ["categories"]
     });
     return Articles;
   } catch (error) {
@@ -34,7 +38,7 @@ const createArticle = async (title, content, UserId) => {
       UserId,
     });
     if (newArticle) {
-        const categories = [2,3,4];
+        const categories = [1,2,3];
         await newArticle.setCategories(categories)
     }
     return newArticle;
